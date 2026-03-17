@@ -7,17 +7,14 @@ venv/
 .env
 .python-version
 
-# runtime / scratch
 test_note.txt
 notes.txt
 sync_log.txt
 push_log.txt
 
-# generated outputs
 output/*.json
 output/*.log
 
-# local state that should not be committed repeatedly
 state/checkpoints.json
 state/doctor_last_report.json
 state/iphone_last_report.json
@@ -25,7 +22,6 @@ state/device_lab_last_report.json
 state/wifi_last_report.json
 state/traffic_state.json
 
-# OS/editor
 .DS_Store
 Thumbs.db
 .vscode/

@@ -10,6 +10,12 @@ from tools.files_read import read_file
 from tools.files_write import write_file
 from tools.system_info import get_system_info
 from tools.repo_audit import list_repo_files
+from tools.workspace_io import workspace_list, workspace_manifest, workspace_write, workspace_read
+from tools.workspace_index import index_workspace
+
+from interfaces.ai_interface import query_ai as ai_ask, ai_health, ai_models
+from agent.runtime import run as agent_run
+from agent.reflection import reflect_latest as agent_reflect, memory_status as agent_memory_status
 
 TOOL_REGISTRY = {
     "doctor.scan": doctor_scan,
@@ -36,4 +42,18 @@ TOOL_REGISTRY = {
     "write_file": write_file,
     "system.info": get_system_info,
     "repo.audit": list_repo_files,
+
+    "workspace.list": workspace_list,
+    "workspace.manifest": workspace_manifest,
+    "workspace.write": workspace_write,
+    "workspace.read": workspace_read,
+    "workspace.index": index_workspace,
+
+    "ai.health": ai_health,
+    "ai.models": ai_models,
+    "ai.ask": ai_ask,
+
+    "agent.run": agent_run,
+    "agent.reflect": agent_reflect,
+    "agent.memory_status": agent_memory_status,
 }

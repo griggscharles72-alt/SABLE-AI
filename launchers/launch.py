@@ -17,7 +17,3 @@ def launch(ui="cli"):
     if ui == "tk":
         return {"status": "tk launcher placeholder"}
     return {"error": "unknown ui", "ui": ui}
-
-if __name__ == "__main__":
-    ui = sys.argv[1] if len(sys.argv) > 1 else "cli"
-    print(launch(ui))

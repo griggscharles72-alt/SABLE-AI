@@ -1,0 +1,10 @@
+{
+  "fast": {
+    "model": "qwen2.5-coder:1.5b",
+    "purpose": "fast local coding and iteration"
+  },
+  "main": {
+    "model": "qwen2.5-coder:7b",
+    "purpose": "primary real agent brain"
+  }
+}

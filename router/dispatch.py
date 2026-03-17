@@ -13,7 +13,6 @@ def dispatch(command: str, payload=None):
         return {"ok": False, "error": "unknown command", "command": command}
 
     fn = TOOL_REGISTRY[command]
-
     try:
         if payload is None:
             result = fn()
@@ -21,18 +20,9 @@ def dispatch(command: str, payload=None):
             result = fn(**payload)
         else:
             result = fn(payload)
-
-        return {
-            "ok": True,
-            "command": command,
-            "result": result,
-        }
+        return {"ok": True, "command": command, "result": result}
     except Exception as exc:
-        return {
-            "ok": False,
-            "command": command,
-            "error": str(exc),
-        }
+        return {"ok": False, "command": command, "error": str(exc)}
 
 def parse_payload(raw: str):
     raw = (raw or "").strip()
@@ -42,6 +32,3 @@ def parse_payload(raw: str):
         return json.loads(raw)
     except json.JSONDecodeError:
         return raw
-
-if __name__ == "__main__":
-    print(json.dumps(dispatch("doctor.status"), indent=2))
