@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+.python-version
+
+# runtime / scratch
+test_note.txt
+sync_log.txt
+push_log.txt
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# local state that should not be committed repeatedly
+state/checkpoints.json

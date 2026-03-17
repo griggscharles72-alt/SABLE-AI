@@ -1,14 +1,29 @@
+#!/usr/bin/env python3
 import os
 
+SKIP_DIRS = {
+    ".git",
+    "__pycache__",
+    ".venv",
+    "venv",
+}
+
+SKIP_FILES = {
+    "sync_log.txt",
+    "push_log.txt",
+}
+
 def list_repo_files(base_dir="."):
-    files = []
-    for root, dirs, filenames in os.walk(base_dir):
-        for f in filenames:
-            files.append(os.path.relpath(os.path.join(root, f), base_dir))
-    return files
+    results = []
+    for root, dirs, files in os.walk(base_dir):
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        for name in files:
+            if name in SKIP_FILES:
+                continue
+            path = os.path.relpath(os.path.join(root, name), base_dir)
+            results.append(path)
+    return sorted(results)
 
 if __name__ == "__main__":
-    all_files = list_repo_files()
-    print(f"Files in repo ({len(all_files)}):")
-    for f in all_files:
-        print(f" - {f}")
+    items = list_repo_files()
+    print(items)
