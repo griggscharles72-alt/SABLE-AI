@@ -2,3 +2,8 @@
 Your branch and 'origin/main' have diverged,
 and have 1 and 1 different commits each, respectively.
   (use "git pull" if you want to integrate the remote branch with yours)
+[main 0c4597f] Sync local updates with upstream
+ 1 file changed, 4 insertions(+)
+ create mode 100644 sync_log.txt
+=== Attempting SSH pull ===
+⚠ SSH pull failed, falling back to HTTPS (token required)
