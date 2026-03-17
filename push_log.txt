@@ -1,0 +1,17 @@
+=== Starting SABLE-Agent safe push ===
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'pc-1@pc-1-HP-ENVY-TE01-0xxx.(none)')
+Switched to a new branch 'main'
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:griggscharles72-alt/SABLE-AI.git'
