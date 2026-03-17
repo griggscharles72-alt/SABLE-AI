@@ -1,11 +1,26 @@
-# interfaces/ai_interface.py
+#!/usr/bin/env python3
+from router.dispatch import dispatch
+
 def query_ai(prompt):
-    return {"prompt": prompt, "response": "AI placeholder response"}
+    prompt = (prompt or "").strip()
+    if prompt.startswith("run "):
+        cmd = prompt[4:].strip()
+        return dispatch(cmd)
+    return {
+        "ok": True,
+        "prompt": prompt,
+        "response": "AI placeholder response",
+    }
 
 def start_ai_loop():
-    print("AI interface started")
-    return {"status": "ai running"}
+    return {
+        "ok": True,
+        "interface": "ai",
+        "status": "ready",
+        "hint": "Use input like: run doctor.status",
+    }
 
 if __name__ == "__main__":
-    print(start_ai_loop())
-    print(query_ai("run doctor.status"))
+    import json
+    print(json.dumps(start_ai_loop(), indent=2))
+    print(json.dumps(query_ai("run doctor.status"), indent=2))
