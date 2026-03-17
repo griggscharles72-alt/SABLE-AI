@@ -59,12 +59,56 @@ def health():
 
 def ask(prompt: str, model: str = None, system: str = None):
     model = model or DEFAULT_MODEL
+    installed = available_models()
+
+    if model not in installed:
+        return {
+            "ok": False,
+            "backend": "ollama",
+            "model": model,
+            "prompt": prompt,
+            "error": "model_not_installed",
+            "installed_models": installed,
+        }
+
     messages = []
     if system:
         messages.append({"role": "system", "content": system})
     messages.append({"role": "user", "content": prompt})
+
     data = _request("/chat", {"model": model, "messages": messages, "stream": False})
+
     if isinstance(data, dict) and data.get("error"):
-        return {"ok": False, "backend": "ollama", "model": model, "prompt": prompt, "error": data.get("error"), "detail": data.get("detail")}
+        return {
+            "ok": False,
+            "backend": "ollama",
+            "model": model,
+            "prompt": prompt,
+            "error": data.get("error"),
+            "detail": data.get("detail"),
+        }
+
     msg = data.get("message", {}) if isinstance(data, dict) else {}
-    return {"ok": True, "backend": "ollama", "model": model, "prompt": prompt, "response": msg.get("content", ""), "raw": data}
+    content = msg.get("content", "")
+
+    if not str(content).strip():
+        return {
+            "ok": False,
+            "backend": "ollama",
+            "model": model,
+            "prompt": prompt,
+            "error": "empty_response",
+            "raw": data,
+        }
+
+    return {
+        "ok": True,
+        "backend": "ollama",
+        "model": model,
+        "prompt": prompt,
+        "response": content,
+        "raw": data,
+    }
+
+if __name__ == "__main__":
+    print(json.dumps(health(), indent=2))

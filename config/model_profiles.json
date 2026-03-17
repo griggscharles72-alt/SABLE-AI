@@ -1,7 +1,7 @@
 {
   "fast": {
-    "model": "qwen2.5-coder:1.5b",
-    "purpose": "fast local coding and iteration"
+    "model": "llama3.2:1b",
+    "purpose": "installed fast fallback profile"
   },
   "main": {
     "model": "qwen2.5-coder:7b",
