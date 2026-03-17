@@ -4,12 +4,16 @@ from pathlib import Path
 
 from interfaces.ai_interface import query_ai
 from tools.workspace_index import index_workspace
-from tools.report_io import write_json, utc_now
+from tools.repo_audit import list_repo_files
+from tools.report_io import write_json, utc_now, read_json
 from agent.reflection import append_run
 
 PROFILE_PATH = Path("config/model_profiles.json")
 OUTPUT_JSON = "output/agent_run_latest.json"
 OUTPUT_MD = "output/agent_run_latest.md"
+
+STATE_DIR = Path("state")
+OUTPUT_DIR = Path("output")
 
 def load_profiles():
     if not PROFILE_PATH.exists():
@@ -25,20 +29,78 @@ def resolve_model(profile="main", model=None):
     profiles = load_profiles()
     return profiles.get(profile, {}).get("model", "llama3.2:1b")
 
+def summarize_state():
+    summary = {}
+    if not STATE_DIR.exists():
+        return summary
+    for p in sorted(STATE_DIR.glob("*.json")):
+        data = read_json(str(p), default={})
+        if isinstance(data, dict):
+            summary[p.name] = {
+                "keys": sorted(list(data.keys()))[:20],
+                "status": data.get("status"),
+                "timestamp": data.get("timestamp"),
+                "started_at": data.get("started_at"),
+                "stopped_at": data.get("stopped_at"),
+            }
+        else:
+            summary[p.name] = {"type": type(data).__name__}
+    return summary
+
+def summarize_output():
+    summary = {}
+    if not OUTPUT_DIR.exists():
+        return summary
+    for p in sorted(OUTPUT_DIR.glob("*")):
+        if p.is_file():
+            summary[p.name] = {
+                "size": p.stat().st_size,
+            }
+    return summary
+
+def build_context():
+    workspace = index_workspace()
+    repo_files = list_repo_files()
+
+    important_files = [
+        f for f in repo_files
+        if not f.startswith(".git/")
+        and "__pycache__" not in f
+        and not f.endswith(".pyc")
+    ]
+
+    return {
+        "repo_root": str(Path(".").resolve()),
+        "repo_file_count": len(important_files),
+        "repo_files": important_files[:200],
+        "workspace": workspace,
+        "state_summary": summarize_state(),
+        "output_summary": summarize_output(),
+    }
+
 def run(goal, profile="main", model=None):
     model_name = resolve_model(profile=profile, model=model)
-    workspace = index_workspace()
+    context = build_context()
 
     system = (
-        "You are SABLE, a local offline-capable repo agent. "
-        "Be direct, technical, and execution-focused. "
-        "Return plain text with these sections: SUMMARY, PLAN, FILES, COMMANDS, RISKS."
+        "You are SABLE, a local repo agent. "
+        "Be direct, technical, grounded, and file-aware. "
+        "Use only the provided repo context. "
+        "Do not invent files that are not listed. "
+        "Reference real file paths when making recommendations. "
+        "Return these exact sections: SUMMARY, PLAN, FILES, COMMANDS, RISKS."
     )
 
     prompt = (
         f"GOAL:\n{goal}\n\n"
-        f"MODEL PROFILE: {profile}\n\n"
-        f"WORKSPACE MANIFEST:\n{json.dumps(workspace, indent=2)}\n"
+        f"PROFILE: {profile}\n"
+        f"MODEL: {model_name}\n\n"
+        f"REPO CONTEXT:\n{json.dumps(context, indent=2)}\n\n"
+        "Instructions:\n"
+        "1. Ground recommendations in the listed repo files.\n"
+        "2. Mention specific files to edit or create when appropriate.\n"
+        "3. Keep COMMANDS practical for this Linux repo.\n"
+        "4. If context is thin, say so explicitly instead of inventing details.\n"
     )
 
     result = query_ai(prompt=prompt, model=model_name, system=system)
@@ -48,7 +110,12 @@ def run(goal, profile="main", model=None):
         "goal": goal,
         "profile": profile,
         "model": model_name,
-        "workspace_file_count": workspace.get("file_count", 0),
+        "context": {
+            "repo_file_count": context.get("repo_file_count", 0),
+            "workspace_file_count": context.get("workspace", {}).get("file_count", 0),
+            "state_files": sorted(list(context.get("state_summary", {}).keys())),
+            "output_files": sorted(list(context.get("output_summary", {}).keys())),
+        },
         "ai_result": result
     }
 
@@ -62,6 +129,8 @@ def run(goal, profile="main", model=None):
     md.append(f"**Goal:** {goal}")
     md.append(f"**Profile:** {profile}")
     md.append(f"**Model:** {model_name}")
+    md.append(f"**Repo files seen:** {artifact['context']['repo_file_count']}")
+    md.append(f"**Workspace files seen:** {artifact['context']['workspace_file_count']}")
     md.append("")
     md.append("## Result")
     md.append("")
@@ -79,7 +148,8 @@ def run(goal, profile="main", model=None):
         "goal": goal,
         "profile": profile,
         "model": model_name,
-        "workspace_file_count": workspace.get("file_count", 0),
+        "repo_file_count": artifact["context"]["repo_file_count"],
+        "workspace_file_count": artifact["context"]["workspace_file_count"],
         "response_preview": response_text[:300],
         "ok": bool(result.get("ok")),
         "error": result.get("error"),
@@ -105,8 +175,10 @@ def run(goal, profile="main", model=None):
         "model": model_name,
         "artifact_json": OUTPUT_JSON,
         "artifact_md": OUTPUT_MD,
-        "response_preview": response_text[:400]
+        "repo_file_count": artifact["context"]["repo_file_count"],
+        "workspace_file_count": artifact["context"]["workspace_file_count"],
+        "response_preview": response_text[:500]
     }
 
 if __name__ == "__main__":
-    print(json.dumps(run("Describe how to improve this repo."), indent=2))
+    print(json.dumps(run("Create a grounded roadmap for this repo."), indent=2))

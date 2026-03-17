@@ -7,6 +7,55 @@
       "response_preview": "",
       "timestamp": "2026-03-17T20:45:45.503681+00:00",
       "workspace_file_count": 1
+    },
+    {
+      "goal": "Give 2 short bullet improvements for this repo.",
+      "model": "qwen2.5-coder:1.5b",
+      "profile": "fast",
+      "response_preview": "",
+      "timestamp": "2026-03-17T21:07:34.149188+00:00",
+      "workspace_file_count": 1
+    },
+    {
+      "error": null,
+      "goal": "Give 2 short bullet improvements for this repo.",
+      "model": "llama3.2:1b",
+      "ok": true,
+      "profile": "fast",
+      "response_preview": "**SUMMARY**\n* This is a basic workspace manifest file, indicating the root directory and containing one file named `demo.txt` with a size of 15 bytes.\n\n**PLAN**\n* Create a new repository (repo) to centralize all Sable-related files and configurations.\n* Utilize a Git repository hosting service like ",
+      "timestamp": "2026-03-17T21:09:59.844092+00:00",
+      "workspace_file_count": 1
+    },
+    {
+      "error": null,
+      "goal": "Give 3 concrete improvements for this repo.",
+      "model": "llama3.2:1b",
+      "ok": true,
+      "profile": "fast",
+      "response_preview": "**SUMMARY**\n\nThe given workspace manifest for the SABLE repo appears to be a simple JSON object with basic metadata and file information. To improve this repo, I recommend the following concrete enhancements:\n\n1. **Add more robust file configuration**: Currently, the files are hardcoded to \"demo.txt",
+      "timestamp": "2026-03-17T21:12:45.625653+00:00",
+      "workspace_file_count": 1
+    },
+    {
+      "error": null,
+      "goal": "Create a short roadmap for this repo with sections SUMMARY, PLAN, FILES, COMMANDS, RISKS.",
+      "model": "qwen2.5-coder:7b",
+      "ok": true,
+      "profile": "main",
+      "response_preview": "### SUMMARY\nThe goal is to create a short roadmap for the current repository, detailing what needs to be done in terms of planning, execution, file management, and risk assessment.\n\n### PLAN\n1. **Identify Key Tasks**: Determine which tasks are critical for the successful completion of the project.\n2",
+      "timestamp": "2026-03-17T21:16:33.132444+00:00",
+      "workspace_file_count": 1
+    },
+    {
+      "error": null,
+      "goal": "Create a grounded roadmap for this repo. Reference real repo files and avoid generic advice.",
+      "model": "llama3.2:1b",
+      "ok": true,
+      "profile": "fast",
+      "repo_file_count": 69,
+      "response_preview": "SUMMARY:\nCreate a fast and stable Sable agent run environment by following the outlined roadmap.\n\nPLAN:\n\n1. Configure the repository root to optimize performance.\n\t* Set up symbolic links to improve directory traversal.\n\t* Create a new file named `symlink_rules` with relevant configurations.\n2. Opti",
+      "timestamp": "2026-03-17T21:19:18.955916+00:00",
+      "workspace_file_count": 1
     }
   ]
 }
