@@ -1,90 +1,23 @@
-# Artifact: Talking Agent Full Test
+# SABLE Agent Run
 
-{
-  "ok": true,
-  "goal": "Talking Agent Full Test",
-  "summary": "Full runtime executed with backend outputs",
-  "plan": [
-    "Ensure runtime stability",
-    "Use verified workspace files",
-    "Capture backend outputs"
-  ],
-  "files": [
-    "conversation_20260317_204441.md",
-    "olama_config.json",
-    "elama_frontend.html",
-    "alama_backend.py",
-    "elama_backend.py",
-    "elama_config.json",
-    "alama_config.json",
-    "conversation_20260317_204441.json",
-    "agent_engine.py",
-    "demo2.txt",
-    "demo1.txt",
-    "olama_backend.py",
-    "demo.txt"
-  ],
-  "artifacts": {
-    "wifi_scan": {
-      "networks": [
-        "SSID_A",
-        "SSID_B"
-      ],
-      "count": 2
-    },
-    "traffic_logs": {
-      "interfaces": [
-        "eth0",
-        "wlan0"
-      ],
-      "packets_captured": 42
-    },
-    "connected_devices": [
-      "device_1",
-      "device_2"
-    ],
-    "doctor_diagnostics": {
-      "cpu_load": 12.5,
-      "disk_usage": "32GB/128GB"
-    },
-    "iphone_data": {
-      "battery": "87%",
-      "connected_apps": [
-        "app1",
-        "app2"
-      ]
-    },
-    "sentinel_baseline": {
-      "baseline_files": [
-        "file1",
-        "file2"
-      ],
-      "drift_detected": false
-    },
-    "alama_backend": {
-      "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/alama_backend.py",
-      "tokens": "unlimited",
-      "response": {
-        "response": "Talking agent response to goal: 'No goal'"
-      }
-    },
-    "elama_backend": {
-      "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/elama_backend.py",
-      "tokens": "unlimited",
-      "response": {
-        "response": "Talking agent response to goal: 'No goal'"
-      }
-    },
-    "olama_backend": {
-      "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/olama_backend.py",
-      "tokens": "unlimited",
-      "response": {
-        "response": "Talking agent response to goal: 'No goal'"
-      }
-    }
-  },
-  "timestamp": "2026-03-18T00:44:41.809180+00:00",
-  "memory": {
-    "runs": 1
-  }
-}
+**Timestamp:** 2026-03-18T00:59:57.661789+00:00
+
+**Goal:** Give me a direct status summary of this repo and confirm you are running through Ollama.
+
+**OK:** True
+
+**Model:** qwen2.5-coder:7b
+
+## Response
+
+This repo is under development and currently undergoing testing. It is being run through Ollama for evaluation and optimization.
+
+## Workspace Files
+
+- workspace/ollama_backend.py
+- workspace/ollama_config.json
+
+## Conversation Logs
+
+- JSON: /home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_005957.json
+- Markdown: /home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_005957.md

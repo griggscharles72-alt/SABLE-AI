@@ -25,3 +25,4 @@ state/traffic_state.json
 .DS_Store
 Thumbs.db
 .vscode/
+output/conversations/

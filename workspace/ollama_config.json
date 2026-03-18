@@ -1,0 +1,7 @@
+{
+  "preferred_models": [
+    "qwen2.5-coder:7b",
+    "llama3.2:1b"
+  ],
+  "prompt_preamble": "You are SABLE's real local runtime brain. Be direct, deterministic, execution-focused, and concise. Return plain text only."
+}
