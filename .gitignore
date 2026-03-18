@@ -12,7 +12,6 @@ notes.txt
 sync_log.txt
 push_log.txt
 
-output/*.json
 output/*.log
 
 state/checkpoints.json

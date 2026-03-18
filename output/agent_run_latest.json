@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "goal": "Give me a direct one-paragraph status summary of this repository.",
+  "summary": "SABLE is a local runtime using Ollama with the qwen2.5-coder:7b model, ready for execution-focused tasks.",
+  "model": "qwen2.5-coder:7b",
+  "files": [
+    "workspace/ollama_backend.py",
+    "workspace/ollama_config.json"
+  ],
+  "artifacts": {
+    "ollama_backend": {
+      "ok": true,
+      "backend": "ollama",
+      "goal": "Give me a direct one-paragraph status summary of this repository.",
+      "model": "qwen2.5-coder:7b",
+      "installed_models": [
+        "qwen2.5-coder:7b",
+        "llama3.2:1b"
+      ],
+      "response": "SABLE is a local runtime using Ollama with the qwen2.5-coder:7b model, ready for execution-focused tasks.",
+      "error": "",
+      "conversation_json": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_021212.json",
+      "conversation_md": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_021212.md",
+      "timestamp": "2026-03-18T02:12:12.389952+00:00"
+    }
+  },
+  "timestamp": "2026-03-18T02:12:12.405839+00:00",
+  "memory": {
+    "runs": 6
+  }
+}
