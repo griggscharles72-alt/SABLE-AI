@@ -1,8 +1,8 @@
-# Artifact: Full Pipeline Test
+# Artifact: Talking Agent Full Test
 
 {
   "ok": true,
-  "goal": "Full Pipeline Test",
+  "goal": "Talking Agent Full Test",
   "summary": "Full runtime executed with backend outputs",
   "plan": [
     "Ensure runtime stability",
@@ -10,12 +10,15 @@
     "Capture backend outputs"
   ],
   "files": [
+    "conversation_20260317_204441.md",
     "olama_config.json",
     "elama_frontend.html",
     "alama_backend.py",
     "elama_backend.py",
     "elama_config.json",
     "alama_config.json",
+    "conversation_20260317_204441.json",
+    "agent_engine.py",
     "demo2.txt",
     "demo1.txt",
     "olama_backend.py",
@@ -62,25 +65,25 @@
       "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/alama_backend.py",
       "tokens": "unlimited",
       "response": {
-        "response": "Hello, I am Alama AI and ready to talk!"
+        "response": "Talking agent response to goal: 'No goal'"
       }
     },
     "elama_backend": {
       "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/elama_backend.py",
       "tokens": "unlimited",
       "response": {
-        "response": "Hello, I am Elama AI and ready to talk!"
+        "response": "Talking agent response to goal: 'No goal'"
       }
     },
     "olama_backend": {
       "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/olama_backend.py",
       "tokens": "unlimited",
       "response": {
-        "response": "Hello, I am Olama AI and ready to talk!"
+        "response": "Talking agent response to goal: 'No goal'"
       }
     }
   },
-  "timestamp": "2026-03-18T00:35:10.580386+00:00",
+  "timestamp": "2026-03-18T00:44:41.809180+00:00",
   "memory": {
     "runs": 1
   }
