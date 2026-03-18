@@ -86,6 +86,38 @@
       "conversation_json": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_005957.json",
       "conversation_md": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_005957.md",
       "timestamp": "2026-03-18T00:59:57.662129+00:00"
+    },
+    {
+      "goal": "State your backend, model, and purpose in one short paragraph.",
+      "ok": true,
+      "model": "qwen2.5-coder:7b",
+      "conversation_json": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_010248.json",
+      "conversation_md": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_010248.md",
+      "timestamp": "2026-03-18T01:02:48.483537+00:00"
+    },
+    {
+      "goal": "State your runtime identity, backend, and model in one short paragraph.",
+      "ok": true,
+      "model": "qwen2.5-coder:7b",
+      "conversation_json": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_012155.json",
+      "conversation_md": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_012155.md",
+      "timestamp": "2026-03-18T01:21:55.198764+00:00"
+    },
+    {
+      "goal": "State your runtime identity, backend, model, and purpose in one short paragraph. Do not mention vendor names.",
+      "ok": true,
+      "model": "qwen2.5-coder:7b",
+      "conversation_json": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_021145.json",
+      "conversation_md": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_021145.md",
+      "timestamp": "2026-03-18T02:11:45.459464+00:00"
+    },
+    {
+      "goal": "Give me a direct one-paragraph status summary of this repository.",
+      "ok": true,
+      "model": "qwen2.5-coder:7b",
+      "conversation_json": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_021212.json",
+      "conversation_md": "/home/pc-1/sable-agent-run/sable-agent/output/conversations/conversation_20260318_021212.md",
+      "timestamp": "2026-03-18T02:12:12.406750+00:00"
     }
   ]
 }

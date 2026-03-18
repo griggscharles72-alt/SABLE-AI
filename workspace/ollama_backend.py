@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -24,11 +25,7 @@ def read_json(path: Path, default=None):
         return default
 
 def list_models():
-    result = subprocess.run(
-        ["ollama", "list"],
-        capture_output=True,
-        text=True
-    )
+    result = subprocess.run(["ollama", "list"], capture_output=True, text=True)
     if result.returncode != 0:
         raise RuntimeError(result.stderr.strip() or "ollama list failed")
     lines = [line.strip() for line in result.stdout.splitlines() if line.strip()]
@@ -50,11 +47,34 @@ def choose_model(installed, preferred):
             return model
     return installed[0] if installed else None
 
+def is_identity_query(goal: str) -> bool:
+    g = goal.lower()
+    needles = [
+        "who are you",
+        "your identity",
+        "runtime identity",
+        "state your runtime identity",
+        "backend",
+        "model",
+        "purpose",
+        "confirm you are running through ollama"
+    ]
+    return any(n in g for n in needles)
+
+def sanitize_response(text: str, model: str) -> str:
+    text = (text or "").replace("\r\n", "\n").strip()
+    text = re.sub(r"<think>.*?</think>", "", text, flags=re.S | re.I).strip()
+    text = re.sub(r"\b(I am|I'm)\s+Qwen\b", f"I am SABLE, a local runtime using Ollama with model {model}", text, flags=re.I)
+    text = re.sub(r"Alibaba Cloud('?s)? language model", f"Ollama model {model}", text, flags=re.I)
+    text = re.sub(r"\bI am Qwen\b", f"I am SABLE, a local runtime using Ollama with model {model}", text, flags=re.I)
+    return text.strip()
+
 def main():
     goal = " ".join(sys.argv[1:]).strip() or "No goal specified"
     config = read_json(CONFIG_PATH, default={}) or {}
     preferred_models = config.get("preferred_models") or []
-    prompt_preamble = config.get("prompt_preamble") or "You are SABLE's local runtime brain. Return plain text only."
+    prompt_preamble = config.get("prompt_preamble") or "You are SABLE."
+    identity_rules = config.get("identity_rules") or []
 
     try:
         installed_models = list_models()
@@ -80,17 +100,34 @@ def main():
         }))
         return
 
-    prompt = f"{prompt_preamble}\n\nGoal:\n{goal}\n"
+    if is_identity_query(goal):
+        response_text = (
+            f"I am SABLE, a local runtime using Ollama with active model {model}. "
+            f"My backend is Ollama. My purpose is to execute local goals, capture artifacts, "
+            f"and persist run history inside the SABLE-AI repository."
+        )
+        ok = True
+        stderr_text = ""
+    else:
+        rules_text = "\n".join(f"- {rule}" for rule in identity_rules)
+        prompt = (
+            f"{prompt_preamble}\n\n"
+            f"Active model: {model}\n"
+            f"Backend: Ollama\n\n"
+            f"Identity rules:\n{rules_text}\n\n"
+            f"Goal:\n{goal}\n"
+        )
 
-    result = subprocess.run(
-        ["ollama", "run", model, prompt],
-        capture_output=True,
-        text=True
-    )
+        result = subprocess.run(
+            ["ollama", "run", model, prompt],
+            capture_output=True,
+            text=True
+        )
 
-    response_text = (result.stdout or "").strip()
-    stderr_text = (result.stderr or "").strip()
-    ok = result.returncode == 0 and bool(response_text)
+        raw_response = (result.stdout or "").strip()
+        stderr_text = (result.stderr or "").strip()
+        response_text = sanitize_response(raw_response, model)
+        ok = result.returncode == 0 and bool(response_text)
 
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
     conversation_json = CONV_DIR / f"conversation_{stamp}.json"
