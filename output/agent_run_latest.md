@@ -1,8 +1,8 @@
-# Artifact: Clean Workspace Full Test
+# Artifact: Full Pipeline Test
 
 {
   "ok": true,
-  "goal": "Clean Workspace Full Test",
+  "goal": "Full Pipeline Test",
   "summary": "Full runtime executed with backend outputs",
   "plan": [
     "Ensure runtime stability",
@@ -80,7 +80,7 @@
       }
     }
   },
-  "timestamp": "2026-03-18T00:32:44.320365+00:00",
+  "timestamp": "2026-03-18T00:35:10.580386+00:00",
   "memory": {
     "runs": 1
   }

@@ -1,7 +1,7 @@
 {
   "runs": [
     {
-      "goal": "Clean Workspace Full Test",
+      "goal": "Full Pipeline Test",
       "files": [
         "olama_config.json",
         "elama_frontend.html",
@@ -74,7 +74,7 @@
         }
       },
       "ok": true,
-      "timestamp": "2026-03-18T00:32:44.320421+00:00"
+      "timestamp": "2026-03-18T00:35:10.580437+00:00"
     }
   ]
 }
