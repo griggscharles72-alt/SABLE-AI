@@ -1,3 +1,3 @@
 #!/usr/bin/env python3
-# Placeholder for Elama backend
-print("Elama backend placeholder")
+import json
+print(json.dumps({"response": "Hello, I am Elama AI and ready to talk!" }))

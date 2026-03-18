@@ -1,3 +1,3 @@
 #!/usr/bin/env python3
-# Offline Alama AI backend placeholder
-print("Alama backend placeholder")
+import json
+print(json.dumps({"response": "Hello, I am Alama AI and ready to talk!" }))
