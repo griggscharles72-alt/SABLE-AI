@@ -1,0 +1,39 @@
+============================================================
+SABLE SAFE AGENT RUN
+============================================================
+Profile : fast
+Goal    : Create a grounded roadmap for this repo. Use real existing repo files. Mark missing ones as PROPOSED NEW FILE.
+Log     : /home/pc-1/sable-agent-run/sable-agent/logs/sable_agent_safe_20260317_182044.log
+
+[2026-03-17T18:20:44-04:00] heartbeat: agent.run still executing...
+[2026-03-17T18:20:54-04:00] heartbeat: agent.run still executing...
+[2026-03-17T18:21:04-04:00] heartbeat: agent.run still executing...
+[2026-03-17T18:21:14-04:00] heartbeat: agent.run still executing...
+[2026-03-17T18:21:24-04:00] heartbeat: agent.run still executing...
+[2026-03-17T18:21:34-04:00] heartbeat: agent.run still executing...
+[2026-03-17T18:21:44-04:00] heartbeat: agent.run still executing...
+[2026-03-17T18:21:54-04:00] heartbeat: agent.run still executing...
+{
+  "ok": true,
+  "command": "agent.run",
+  "result": {
+    "ok": true,
+    "goal": "Create a grounded roadmap for this repo. Use real existing repo files. Mark missing ones as PROPOSED NEW FILE.",
+    "profile": "fast",
+    "model": "llama3.2:1b",
+    "timestamp": "2026-03-17T22:20:44.574343+00:00",
+    "artifact_json": "output/agent_run_latest.json",
+    "artifact_md": "output/agent_run_latest.md",
+    "repo_file_count": 72,
+    "workspace_file_count": 1,
+    "fallback_used": true,
+    "fallback_reason": "model exception: unhashable type: 'dict'",
+    "response_preview": "SUMMARY\n- SABLE generated this roadmap through the deterministic fallback planner because the model response was unavailable, weak, unsafe, or insufficiently grounded.\n- The current objective is to make the repo produce stable, structured, repo-aware planning artifacts at a repeatable rate.\n- The active profile was `fast` using model `llama3.2:1b`.\n\nPLAN\n1. Stabilize the runtime path so agent.run always returns a structured artifact even if the model is weak or unavailable.\n2. Improve grounding by limiting planning references to files that actually exist in the repo or are explicitly marked as PROPOSED NEW FILE.\n3. Separate fast-profile validation from main-profile detailed runs so short tests do not block longer roadmap generation.\n4. Promote artifact quality by validating required sections and rejecting dangerous command suggestions before writing final outputs.\n5. Use the heartbeat wr"
+  }
+}
+
+Process exit code : 0
+Logical exit code : 0
+Final exit code   : 0
+Latest markdown artifact: /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.md
+Latest json artifact    : /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.json

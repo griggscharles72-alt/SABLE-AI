@@ -1,61 +1,499 @@
 {
-  "runs": [
+  "history_tail": [
     {
-      "goal": "Assess this repo and give the next 3 technical improvements.",
-      "model": "qwen2.5-coder:1.5b",
-      "profile": "fast",
-      "response_preview": "",
-      "timestamp": "2026-03-17T20:45:45.503681+00:00",
-      "workspace_file_count": 1
-    },
-    {
-      "goal": "Give 2 short bullet improvements for this repo.",
-      "model": "qwen2.5-coder:1.5b",
-      "profile": "fast",
-      "response_preview": "",
-      "timestamp": "2026-03-17T21:07:34.149188+00:00",
-      "workspace_file_count": 1
-    },
-    {
-      "error": null,
-      "goal": "Give 2 short bullet improvements for this repo.",
+      "fallback_used": true,
+      "goal": "Create a grounded roadmap for this repo. Use real existing repo files. Mark missing ones as PROPOSED NEW FILE.",
       "model": "llama3.2:1b",
       "ok": true,
       "profile": "fast",
-      "response_preview": "**SUMMARY**\n* This is a basic workspace manifest file, indicating the root directory and containing one file named `demo.txt` with a size of 15 bytes.\n\n**PLAN**\n* Create a new repository (repo) to centralize all Sable-related files and configurations.\n* Utilize a Git repository hosting service like ",
-      "timestamp": "2026-03-17T21:09:59.844092+00:00",
-      "workspace_file_count": 1
+      "timestamp": "2026-03-17T22:20:44.574343+00:00"
     },
     {
-      "error": null,
-      "goal": "Give 3 concrete improvements for this repo.",
+      "fallback_used": true,
+      "goal": "Create a grounded roadmap for this repo.",
       "model": "llama3.2:1b",
       "ok": true,
       "profile": "fast",
-      "response_preview": "**SUMMARY**\n\nThe given workspace manifest for the SABLE repo appears to be a simple JSON object with basic metadata and file information. To improve this repo, I recommend the following concrete enhancements:\n\n1. **Add more robust file configuration**: Currently, the files are hardcoded to \"demo.txt",
-      "timestamp": "2026-03-17T21:12:45.625653+00:00",
-      "workspace_file_count": 1
+      "timestamp": "2026-03-17T22:25:38.668997+00:00"
     },
     {
-      "error": null,
-      "goal": "Create a short roadmap for this repo with sections SUMMARY, PLAN, FILES, COMMANDS, RISKS.",
+      "fallback_used": true,
+      "goal": "Create a grounded roadmap for this repo with real file references.",
       "model": "qwen2.5-coder:7b",
       "ok": true,
       "profile": "main",
-      "response_preview": "### SUMMARY\nThe goal is to create a short roadmap for the current repository, detailing what needs to be done in terms of planning, execution, file management, and risk assessment.\n\n### PLAN\n1. **Identify Key Tasks**: Determine which tasks are critical for the successful completion of the project.\n2",
-      "timestamp": "2026-03-17T21:16:33.132444+00:00",
-      "workspace_file_count": 1
+      "timestamp": "2026-03-17T22:27:18.738272+00:00"
+    }
+  ],
+  "latest_fallback_used": true,
+  "latest_goal": "Create a grounded roadmap for this repo with real file references.",
+  "latest_model": "qwen2.5-coder:7b",
+  "latest_ok": true,
+  "latest_profile": "main",
+  "latest_repo_file_count": 74,
+  "latest_timestamp": "2026-03-17T22:27:18.738272+00:00",
+  "latest_workspace_file_count": 1,
+  "run_count": 10,
+  "runs": [
+    {
+      "error": "index_workspace() takes 0 positional arguments but 1 was given",
+      "files": [
+        "workspace/datasets",
+        "workspace/demo.txt"
+      ],
+      "goal": "Test roadmap",
+      "ok": true,
+      "plan": [
+        "Ensure runtime stability",
+        "Use only verified repo files",
+        "Reject unsafe commands"
+      ],
+      "summary": "Fallback deterministic plan executed.",
+      "timestamp": "2026-03-17T22:38:49.832517+00:00"
     },
     {
-      "error": null,
-      "goal": "Create a grounded roadmap for this repo. Reference real repo files and avoid generic advice.",
-      "model": "llama3.2:1b",
+      "error": "index_workspace() takes 0 positional arguments but 1 was given",
+      "files": [
+        "workspace/datasets",
+        "workspace/demo.txt"
+      ],
+      "goal": "Create a grounded roadmap for this repo.",
       "ok": true,
-      "profile": "fast",
-      "repo_file_count": 69,
-      "response_preview": "SUMMARY:\nCreate a fast and stable Sable agent run environment by following the outlined roadmap.\n\nPLAN:\n\n1. Configure the repository root to optimize performance.\n\t* Set up symbolic links to improve directory traversal.\n\t* Create a new file named `symlink_rules` with relevant configurations.\n2. Opti",
-      "timestamp": "2026-03-17T21:19:18.955916+00:00",
-      "workspace_file_count": 1
+      "plan": [
+        "Ensure runtime stability",
+        "Use only verified repo files",
+        "Reject unsafe commands"
+      ],
+      "summary": "Fallback deterministic plan executed.",
+      "timestamp": "2026-03-17T22:38:57.408162+00:00"
+    },
+    {
+      "error": "index_workspace() takes 0 positional arguments but 1 was given",
+      "files": [
+        "workspace/datasets",
+        "workspace/demo.txt"
+      ],
+      "goal": "Create a grounded roadmap for this repo with real file references.",
+      "ok": true,
+      "plan": [
+        "Ensure runtime stability",
+        "Use only verified repo files",
+        "Reject unsafe commands"
+      ],
+      "summary": "Fallback deterministic plan executed.",
+      "timestamp": "2026-03-17T22:39:07.421136+00:00"
+    },
+    {
+      "backend": "ollama",
+      "error": "model_not_installed",
+      "installed_models": [
+        "qwen2.5-coder:7b",
+        "llama3.2:1b"
+      ],
+      "model": "fast",
+      "ok": false,
+      "prompt": "Create a grounded roadmap for this repo.",
+      "timestamp": "2026-03-17T22:40:18.281823+00:00"
+    },
+    {
+      "backend": "ollama",
+      "error": "model_not_installed",
+      "installed_models": [
+        "qwen2.5-coder:7b",
+        "llama3.2:1b"
+      ],
+      "model": "main",
+      "ok": false,
+      "prompt": "Create a grounded roadmap for this repo with real file references.",
+      "timestamp": "2026-03-17T22:40:28.252099+00:00"
+    },
+    {
+      "backend": "ollama",
+      "error": "model_not_installed",
+      "installed_models": [
+        "qwen2.5-coder:7b",
+        "llama3.2:1b"
+      ],
+      "model": "fast",
+      "ok": false,
+      "prompt": "Create a grounded roadmap for this repo",
+      "timestamp": "2026-03-17T22:42:55.305955+00:00"
+    },
+    {
+      "backend": "ollama",
+      "error": "model_not_installed",
+      "installed_models": [
+        "qwen2.5-coder:7b",
+        "llama3.2:1b"
+      ],
+      "model": "fast",
+      "ok": false,
+      "prompt": "Create a grounded roadmap for this repo",
+      "timestamp": "2026-03-17T22:43:50.792292+00:00"
+    },
+    {
+      "backend": "ollama",
+      "error": "model_not_installed",
+      "installed_models": [
+        "qwen2.5-coder:7b",
+        "llama3.2:1b"
+      ],
+      "model": "fast",
+      "ok": false,
+      "prompt": "Create a grounded roadmap for this repo",
+      "timestamp": "2026-03-17T22:51:16.705674+00:00"
+    },
+    {
+      "backend": "ollama",
+      "error": "model_not_installed",
+      "installed_models": [
+        "qwen2.5-coder:7b",
+        "llama3.2:1b"
+      ],
+      "model": "fast",
+      "ok": false,
+      "prompt": "Create a grounded roadmap for this repo",
+      "timestamp": "2026-03-17T22:52:11.915121+00:00"
+    },
+    {
+      "test": "ok",
+      "timestamp": "2026-03-17T22:52:33.266861+00:00"
+    },
+    {
+      "ok": true,
+      "goal": "Create a grounded roadmap for this repo",
+      "summary": "Fallback deterministic plan executed.",
+      "plan": [
+        "Ensure runtime stability",
+        "Use only verified repo files",
+        "Reject unsafe commands"
+      ],
+      "files": [
+        "workspace/datasets",
+        "workspace/demo.txt"
+      ],
+      "timestamp": "2026-03-17T22:54:23.171530+00:00"
+    },
+    {
+      "ok": true,
+      "goal": "Create a grounded roadmap for this repo",
+      "summary": "Fallback deterministic plan executed.",
+      "plan": [
+        "Ensure runtime stability",
+        "Use only verified repo files",
+        "Reject unsafe commands"
+      ],
+      "files": [
+        "workspace/datasets",
+        "workspace/demo.txt",
+        "workspace/datasets",
+        "workspace/demo.txt"
+      ],
+      "artifacts": {
+        "wifi_scan": {
+          "networks": [
+            "SSID_A",
+            "SSID_B"
+          ],
+          "count": 2
+        },
+        "traffic_logs": {
+          "packets_captured": 42,
+          "interfaces": [
+            "eth0",
+            "wlan0"
+          ]
+        },
+        "connected_devices": [
+          "device_1",
+          "device_2"
+        ],
+        "doctor_diagnostics": {
+          "cpu_load": 12.5,
+          "disk_usage": "32GB/128GB"
+        },
+        "iphone_data": {
+          "battery": "87%",
+          "connected_apps": [
+            "app1",
+            "app2"
+          ]
+        },
+        "sentinel_baseline": {
+          "drift_detected": false,
+          "baseline_files": [
+            "file1",
+            "file2"
+          ]
+        }
+      },
+      "timestamp": "2026-03-17T23:00:21.938144+00:00"
+    },
+    {
+      "goal": "Alama DoubleCheck",
+      "files": [
+        "datasets",
+        "elama_frontend.html",
+        "alama_backend.py",
+        "elama_backend.py",
+        "elama_config.json",
+        "alama_config.json",
+        "demo2.txt",
+        "demo1.txt",
+        "demo.txt"
+      ],
+      "artifacts": {
+        "alama_backend": {
+          "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/alama_backend.py",
+          "tokens": "unlimited"
+        },
+        "elama_backend": {
+          "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/elama_backend.py",
+          "tokens": "unlimited"
+        },
+        "wifi_scan": {
+          "networks": [
+            "SSID_A",
+            "SSID_B"
+          ],
+          "count": 2
+        },
+        "traffic_logs": {
+          "interfaces": [
+            "eth0",
+            "wlan0"
+          ],
+          "packets_captured": 42
+        },
+        "connected_devices": [
+          "device_1",
+          "device_2"
+        ],
+        "doctor_diagnostics": {
+          "cpu_load": 12.5,
+          "disk_usage": "32GB/128GB"
+        },
+        "iphone_data": {
+          "battery": "87%",
+          "connected_apps": [
+            "app1",
+            "app2"
+          ]
+        },
+        "sentinel_baseline": {
+          "baseline_files": [
+            "file1",
+            "file2"
+          ],
+          "drift_detected": false
+        }
+      },
+      "ok": true,
+      "timestamp": "2026-03-17T23:30:53.998933+00:00"
+    },
+    {
+      "goal": "Olama Talking Test",
+      "files": [
+        "datasets",
+        "olama_config.json",
+        "elama_frontend.html",
+        "alama_backend.py",
+        "elama_backend.py",
+        "elama_config.json",
+        "alama_config.json",
+        "demo2.txt",
+        "demo1.txt",
+        "olama_backend.py",
+        "demo.txt"
+      ],
+      "artifacts": {
+        "alama_backend": {
+          "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/alama_backend.py",
+          "tokens": "unlimited"
+        },
+        "elama_backend": {
+          "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/elama_backend.py",
+          "tokens": "unlimited"
+        },
+        "olama_backend": {
+          "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/olama_backend.py",
+          "tokens": "unlimited"
+        },
+        "wifi_scan": {
+          "networks": [
+            "SSID_A",
+            "SSID_B"
+          ],
+          "count": 2
+        },
+        "traffic_logs": {
+          "interfaces": [
+            "eth0",
+            "wlan0"
+          ],
+          "packets_captured": 42
+        },
+        "connected_devices": [
+          "device_1",
+          "device_2"
+        ],
+        "doctor_diagnostics": {
+          "cpu_load": 12.5,
+          "disk_usage": "32GB/128GB"
+        },
+        "iphone_data": {
+          "battery": "87%",
+          "connected_apps": [
+            "app1",
+            "app2"
+          ]
+        },
+        "sentinel_baseline": {
+          "baseline_files": [
+            "file1",
+            "file2"
+          ],
+          "drift_detected": false
+        }
+      },
+      "ok": true,
+      "timestamp": "2026-03-17T23:37:04.463462+00:00"
+    },
+    {
+      "goal": "Olama Talking Test",
+      "files": [
+        "datasets",
+        "olama_config.json",
+        "elama_frontend.html",
+        "alama_backend.py",
+        "elama_backend.py",
+        "elama_config.json",
+        "alama_config.json",
+        "demo2.txt",
+        "demo1.txt",
+        "olama_backend.py",
+        "demo.txt"
+      ],
+      "artifacts": {
+        "alama_backend": {
+          "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/alama_backend.py",
+          "tokens": "unlimited"
+        },
+        "elama_backend": {
+          "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/elama_backend.py",
+          "tokens": "unlimited"
+        },
+        "olama_backend": {
+          "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/olama_backend.py",
+          "tokens": "unlimited"
+        },
+        "wifi_scan": {
+          "networks": [
+            "SSID_A",
+            "SSID_B"
+          ],
+          "count": 2
+        },
+        "traffic_logs": {
+          "interfaces": [
+            "eth0",
+            "wlan0"
+          ],
+          "packets_captured": 42
+        },
+        "connected_devices": [
+          "device_1",
+          "device_2"
+        ],
+        "doctor_diagnostics": {
+          "cpu_load": 12.5,
+          "disk_usage": "32GB/128GB"
+        },
+        "iphone_data": {
+          "battery": "87%",
+          "connected_apps": [
+            "app1",
+            "app2"
+          ]
+        },
+        "sentinel_baseline": {
+          "baseline_files": [
+            "file1",
+            "file2"
+          ],
+          "drift_detected": false
+        }
+      },
+      "ok": true,
+      "timestamp": "2026-03-17T23:38:15.388885+00:00"
+    },
+    {
+      "goal": "Olama Full Talking Test",
+      "files": [
+        "datasets",
+        "olama_config.json",
+        "elama_frontend.html",
+        "alama_backend.py",
+        "elama_backend.py",
+        "elama_config.json",
+        "alama_config.json",
+        "demo2.txt",
+        "demo1.txt",
+        "olama_backend.py",
+        "demo.txt"
+      ],
+      "artifacts": {
+        "alama_backend": {
+          "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/alama_backend.py",
+          "tokens": "unlimited"
+        },
+        "elama_backend": {
+          "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/elama_backend.py",
+          "tokens": "unlimited"
+        },
+        "olama_backend": {
+          "path": "/home/pc-1/sable-agent-run/sable-agent/workspace/olama_backend.py",
+          "tokens": "unlimited"
+        },
+        "wifi_scan": {
+          "networks": [
+            "SSID_A",
+            "SSID_B"
+          ],
+          "count": 2
+        },
+        "traffic_logs": {
+          "interfaces": [
+            "eth0",
+            "wlan0"
+          ],
+          "packets_captured": 42
+        },
+        "connected_devices": [
+          "device_1",
+          "device_2"
+        ],
+        "doctor_diagnostics": {
+          "cpu_load": 12.5,
+          "disk_usage": "32GB/128GB"
+        },
+        "iphone_data": {
+          "battery": "87%",
+          "connected_apps": [
+            "app1",
+            "app2"
+          ]
+        },
+        "sentinel_baseline": {
+          "baseline_files": [
+            "file1",
+            "file2"
+          ],
+          "drift_detected": false
+        }
+      },
+      "ok": true,
+      "timestamp": "2026-03-17T23:55:22.035820+00:00"
     }
   ]
 }

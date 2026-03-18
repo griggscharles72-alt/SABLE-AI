@@ -1,0 +1,16 @@
+============================================================
+SABLE SAFE AGENT RUN
+============================================================
+Profile : fast
+Goal    : Create a grounded roadmap for this repo. Use real file references. If a new file is needed, mark it as PROPOSED NEW FILE.
+Log     : /home/pc-1/sable-agent-run/sable-agent/logs/sable_agent_safe_20260317_172202.log
+
+{
+  "ok": false,
+  "command": "agent.run",
+  "error": "unhashable type: 'dict'"
+}
+
+Exit code: 0
+Latest markdown artifact: /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.md
+Latest json artifact    : /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.json

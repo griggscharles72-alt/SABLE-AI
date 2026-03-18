@@ -1,0 +1,95 @@
+============================================================
+SABLE RECOVERY / STATUS
+============================================================
+Tue Mar 17 04:40:54 PM EDT 2026
+
+[1] REPO PATH
+/home/pc-1/sable-agent-run/sable-agent
+
+[2] PATH / LOCAL COMMANDS
+which sable:
+/home/pc-1/.local/bin/sable
+which sable-ai:
+/home/pc-1/.local/bin/sable-ai
+
+[3] GIT STATUS
+true
+ M backends/ollama_backend.py
+ M interfaces/ai_interface.py
+ M registry/tool_registry.py
+ M run_sable.py
+ M state/sable.db
+?? agent/runtime.py
+?? config/
+?? logs/
+?? tools/workspace_index.py
+
+990e36d Add local launcher convenience scripts for sable command surface
+3b72d7a Add README specification for architecture commands file structure and workflow
+8c88492 Add state and report layer for service artifact generation
+28f8e5a Upgrade control surface with list commands and aggregate status scan flows
+80cba88 Harden baseline with package markers ignore rules requirements and clean repo audit
+
+[4] KEY FILES
+-rwxrwxr-x 1 pc-1 pc-1 2549 Mar 17 16:39 agent/runtime.py
+-rwxrwxr-x 1 pc-1 pc-1 2829 Mar 17 16:15 backends/ollama_backend.py
+-rw-rw-r-- 1 pc-1 pc-1  196 Mar 17 16:39 config/model_profiles.json
+-rwxrwxr-x 1 pc-1 pc-1  800 Mar 17 16:15 interfaces/ai_interface.py
+-rwxrwxr-x 1 pc-1 pc-1  302 Mar 17 16:02 launchers/sable_local_launcher.sh
+-rwxrwxr-x 1 pc-1 pc-1 2043 Mar 17 16:39 registry/tool_registry.py
+-rwxrwxr-x 1 pc-1 pc-1 4467 Mar 17 16:39 run_sable.py
+-rwxrwxr-x 1 pc-1 pc-1  797 Mar 17 16:39 tools/workspace_index.py
+
+[5] OLLAMA API
+Ollama API: UP
+
+[6] OLLAMA MODELS
+NAME                ID              SIZE      MODIFIED       
+qwen2.5-coder:7b    dae161e27b0e    4.7 GB    22 minutes ago    
+llama3.2:1b         baf6a787fdff    1.3 GB    25 minutes ago    
+
+[7] SABLE COMMAND TESTS
+--- sable help ---
+
+--- sable ai.health ---
+
+--- sable ai.models ---
+
+--- sable workspace.manifest ---
+
+[8] OUTPUT DIRECTORY
+output/device_lab_check_latest.json
+output/doctor_scan_latest.json
+output/iphone_inspect_latest.json
+output/traffic_state_latest.json
+output/wifi_scan_latest.json
+
+[9] STATE DIRECTORY
+state/baseline.json
+state/checkpoints.json
+state/device_lab_last_report.json
+state/doctor_last_report.json
+state/iphone_last_report.json
+state/sable.db
+state/sentinel_last_report.json
+state/traffic_state.json
+state/wifi_last_report.json
+
+[10] CURRENT DEFAULT MODEL
+121:export SABLE_OLLAMA_MODEL=qwen2.5-coder:7b
+
+{
+  "fast": {
+    "model": "qwen2.5-coder:1.5b",
+    "purpose": "fast local coding and iteration"
+  },
+  "main": {
+    "model": "qwen2.5-coder:7b",
+    "purpose": "primary real agent brain"
+  }
+}
+
+============================================================
+RECOVERY CHECK COMPLETE
+Log file: /home/pc-1/sable-agent-run/sable-agent/logs/sable_recovery_20260317_164054.log
+============================================================

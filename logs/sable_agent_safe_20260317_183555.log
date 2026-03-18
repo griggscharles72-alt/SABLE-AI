@@ -1,0 +1,19 @@
+============================================================
+SABLE SAFE AGENT RUN
+============================================================
+Profile : main
+Goal    : Create a grounded roadmap for this repo with real file references.
+Log     : /home/pc-1/sable-agent-run/sable-agent/logs/sable_agent_safe_20260317_183555.log
+
+[2026-03-17T18:35:55-04:00] heartbeat: agent.run still executing...
+{
+  "ok": false,
+  "command": "agent.run",
+  "error": "index_workspace() takes 0 positional arguments but 1 was given"
+}
+
+Process exit code : 0
+Logical exit code : 1
+Final exit code   : 1
+Latest markdown artifact: /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.md
+Latest json artifact    : /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.json

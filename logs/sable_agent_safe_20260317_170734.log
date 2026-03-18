@@ -1,0 +1,24 @@
+============================================================
+SABLE SAFE AGENT RUN
+============================================================
+Profile : fast
+Goal    : Give 2 short bullet improvements for this repo.
+Log     : /home/pc-1/sable-agent-run/sable-agent/logs/sable_agent_safe_20260317_170734.log
+
+{
+  "ok": true,
+  "command": "agent.run",
+  "result": {
+    "ok": true,
+    "goal": "Give 2 short bullet improvements for this repo.",
+    "profile": "fast",
+    "model": "qwen2.5-coder:1.5b",
+    "artifact_json": "output/agent_run_latest.json",
+    "artifact_md": "output/agent_run_latest.md",
+    "response_preview": ""
+  }
+}
+
+Exit code: 0
+Latest markdown artifact: /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.md
+Latest json artifact    : /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.json

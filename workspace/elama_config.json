@@ -1,0 +1,5 @@
+{
+  "backend": "elama_backend.py",
+  "frontend": "elama_frontend.html",
+  "version": "0.1"
+}

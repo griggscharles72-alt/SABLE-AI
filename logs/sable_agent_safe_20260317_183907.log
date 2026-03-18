@@ -1,0 +1,34 @@
+============================================================
+SABLE SAFE AGENT RUN
+============================================================
+Profile : main
+Goal    : Create a grounded roadmap for this repo with real file references.
+Log     : /home/pc-1/sable-agent-run/sable-agent/logs/sable_agent_safe_20260317_183907.log
+
+[2026-03-17T18:39:07-04:00] heartbeat: agent.run still executing...
+{
+  "ok": true,
+  "command": "agent.run",
+  "result": {
+    "ok": true,
+    "goal": "Create a grounded roadmap for this repo with real file references.",
+    "summary": "Fallback deterministic plan executed.",
+    "plan": [
+      "Ensure runtime stability",
+      "Use only verified repo files",
+      "Reject unsafe commands"
+    ],
+    "files": [
+      "workspace/datasets",
+      "workspace/demo.txt"
+    ],
+    "timestamp": "2026-03-17T22:39:07.421136+00:00",
+    "error": "index_workspace() takes 0 positional arguments but 1 was given"
+  }
+}
+
+Process exit code : 0
+Logical exit code : 0
+Final exit code   : 0
+Latest markdown artifact: /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.md
+Latest json artifact    : /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.json

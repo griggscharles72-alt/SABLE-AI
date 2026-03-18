@@ -1,0 +1,30 @@
+============================================================
+SABLE SAFE AGENT RUN
+============================================================
+Profile : fast
+Goal    : Create a grounded roadmap for this repo.
+Log     : /home/pc-1/sable-agent-run/sable-agent/logs/sable_agent_safe_20260317_184018.log
+
+[2026-03-17T18:40:18-04:00] heartbeat: agent.run still executing...
+{
+  "ok": true,
+  "command": "agent.run",
+  "result": {
+    "ok": false,
+    "backend": "ollama",
+    "model": "fast",
+    "prompt": "Create a grounded roadmap for this repo.",
+    "error": "model_not_installed",
+    "installed_models": [
+      "qwen2.5-coder:7b",
+      "llama3.2:1b"
+    ],
+    "timestamp": "2026-03-17T22:40:18.281823+00:00"
+  }
+}
+
+Process exit code : 0
+Logical exit code : 1
+Final exit code   : 1
+Latest markdown artifact: /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.md
+Latest json artifact    : /home/pc-1/sable-agent-run/sable-agent/output/agent_run_latest.json
